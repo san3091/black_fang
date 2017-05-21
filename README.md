@@ -1,24 +1,24 @@
-# README
+# Code name: Black Fang, after the crimson mead that fueled the creation of this app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What is it?
 
-Things you may want to cover:
+Black Fang is an application built to facilitate an approach to dance collaboration. Specifically in idea generation.
 
-* Ruby version
+This is based on a model called Distance Dances, created by Gina T'ai. It is a remixing system.
 
-* System dependencies
+1. Each participant uploads an origin video.
+2. Users respond with another video that remixes elements from 2-3 other videos.
+3. Rinse, repeat.
 
-* Configuration
+After several iterations the goup develops a shared vocabulary from which to pull and curate to create a coreography.
 
-* Database creation
+## Guts
 
-* Database initialization
+Built on rails 5.1 with React views, using weboacker.
 
-* How to run the test suite
+PostgreSQL database, RSpec test suite with Factory Girl and Faker.
 
-* Services (job queues, cache servers, search engines, etc.)
+[Trello board](https://trello.com/b/UtMtWLqZ/black-fang)
 
-* Deployment instructions
+👯
 
-* ...
