@@ -18,3 +18,5 @@
 
 .byebug_history
 .env
+/public/packs
+/node_modules
