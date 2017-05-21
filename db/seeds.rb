@@ -13,29 +13,41 @@ ApplicationRecord.transaction do
                       first_name: "Mike",
                       last_name: "Gergory"
 
-  dance = Dance.create! title: Faker::Food.ingredient,
+  dance = Dance.new title: Faker::Food.ingredient,
                         description: Faker::Food.measurement
 
+  mike.dances << dance
+  dance.save!
+
+  puts "added dance #{dance.title} to Mike"
+
   video = Video.new youtube_url: Faker::Internet.url,
-                        title: Faker::Zelda.game
+                    title: Faker::Zelda.game
+
+  mike.videos << video
+  dance.videos << video
+  video.save!
+
+  puts "added video #{video.title} to dance #{dance.title}"
+  puts "this shit saved #{video.title}"
 
   parent_video = Video.new youtube_url: Faker::Internet.url,
-                               title: Faker::Zelda.game
+                           title: Faker::Zelda.game
+
+  mike.videos << parent_video
+  dance.videos << parent_video
+  video.parents << parent_video
+  parent_video.save!
+  puts "added parent #{parent_video.title} to dance #{dance.title}"
 
   child_video = Video.new youtube_url: Faker::Internet.url,
-                              title: Faker::Zelda.game
+                          title: Faker::Zelda.game
 
-  mike.dances << dance
-  puts "added dance #{dance.title} to Mike"
-  dance.videos << video
-  puts "added video #{video.title} to dance #{dance.title}"
-  video.parents << parent_video
-  puts "added parent #{parent_video.title} to dance #{dance.title}"
+  mike.videos << child_video
+  dance.videos << child_video
   video.children << child_video
-  puts "added child #{child_video} to dance #{dance.title}"
-  video.save!
-  parent_video.save!
   child_video.save!
+  puts "added child #{child_video.title} to dance #{dance.title}"
 
   puts "end db seed"
 end
