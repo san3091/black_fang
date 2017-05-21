@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :video do
-    youtube_link Faker::Internet.url 
+    youtube_url Faker::Internet.url
     title Faker::Ancient.primordial 
   end
 end
