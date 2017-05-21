@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
-  belongs_to  :user, optional: true
+  belongs_to  :user
+  belongs_to  :dance
 
   has_and_belongs_to_many     :parents,
     class_name:               "Video",
